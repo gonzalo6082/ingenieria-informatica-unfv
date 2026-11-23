@@ -1,0 +1,183 @@
+/* Código CSS auditado y limitado estrictamente a los Capítulos 10, 11 y 12 */
+
+body {
+    font-family: Arial, Verdana, sans-serif; /* Fuentes permitidas pág. 265 */
+    background-color: rgb(245, 245, 245);    /* Colores RGB pág. 243 */
+    color: #111111;                         /* Contraste de texto pág. 249 */
+    padding: 20px;                          /* Relleno básico pág. 235 */
+}
+
+/* MENÚ ULTRA LIMPIO BASADO FIELMENTE EN EL LIBRO */
+#nav {
+    background-color: transparent;          /* Sin fondo de color */
+    padding: 10px 0px;
+    margin-bottom: 25px;
+    border: none;                           /* Sin líneas de lado a lado */
+}
+
+#nav strong {
+    color: #111111;                         /* Identificador limpio y oscuro */
+}
+
+#nav a {
+    color: #ff6600;                         /* Enlaces con el naranja oficial UNFV */
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 12px;
+}
+
+#nav a:hover {
+    text-decoration: underline;             /* Subrayado interactivo oficial pág. 291 */
+    color: #003366;                         /* Cambia a azul oscuro al pasar el mouse */
+}
+
+/* CONTENEDOR DE TEXTO RECTANGULAR Y PAREJO */
+#content {
+    max-width: 900px;                       /* Evita que las líneas sean demasiado largas */
+    margin: 0px auto;                       /* Centra el bloque completo en la pantalla */
+}
+
+/* ENCABEZADOS Y TEXTOS */
+h1 {
+    font-family: Georgia, Times, serif;     /* Estilo de letra elegante pág. 265 */
+    color: #ff6600;                         /* Título principal en Naranja UNFV */
+    font-size: 250%;                        /* Tamaño en porcentaje pág. 267 */
+    margin-bottom: 5px;
+}
+
+h2 {
+    color: #003366;                         /* Subtítulos en Azul UNFV */
+    font-size: 130%;
+    text-transform: uppercase;              /* Regla semántica pág. 273 */
+}
+
+h3 {
+    color: #003366;
+    text-align: center;                     /* Centra los subtítulos de secciones */
+}
+
+p {
+    line-height: 1.5em;                     /* Altura de línea pág. 277 */
+    text-align: justify;                    /* ESTRUCTURA RECTANGULAR PAREJA (Capítulo 12) */
+}
+
+/* CONTENEDORES MULTIMEDIA CENTRADOS */
+figure {
+    margin: 25px 0px;                       /* Margen natural para separar elementos */
+    text-align: center;                     /* CENTRA TODAS LAS IMÁGENES Y SUS PIES DE FOTO */
+}
+
+figcaption {
+    font-size: 90%;
+    color: #666666;
+    margin-top: 8px;
+    text-align: center;                     /* Mantiene centrado el pie de foto */
+}
+
+video {
+    display: block;                         /* Permite centrar el video como bloque */
+    margin: 20px auto;                      /* CENTRA EL VIDEO EN LA PANTALLA */
+}
+
+/* LISTAS LIMPIAS SEGÚN EL LIBRO */
+ol, dl {
+    padding: 10px 20px;                     /* Margen interno natural de las listas */
+}
+
+li, dd {
+    margin-bottom: 12px;
+    line-height: 1.5em;
+    text-align: justify;                    /* También deja rectangulares las listas y definiciones */
+}
+
+dt {
+    font-weight: bold;
+    color: #003366;
+}
+
+/* PIE DE PÁGINA DE CONTACTO */
+#footer {
+    max-width: 900px;
+    margin: 40px auto 10px auto;
+    text-align: center;
+}
+
+#footer p {
+    text-align: center;                     /* Mantiene centrado el contacto */
+}
+
+#footer a {
+    color: #ff6600;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#footer a:hover {
+    text-decoration: underline;
+    color: #003366;
+}
+/* TRANSICIONES SUAVES AL PASAR EL MOUSE */
+#nav a {
+    transition: color 0.3s ease;
+}
+
+figure img {
+    transition: transform 0.3s ease;
+}
+
+figure img:hover {
+    transform: scale(1.03);
+}
+
+tr {
+    transition: background-color 0.25s ease;
+}
+
+tr:hover {
+    background-color: #fff3eb;
+}
+
+
+/* MARCO EN LAS FOTOGRAFÍAS */
+figure img {
+    border: 4px solid #003366;
+    padding: 4px;
+    background-color: #ffffff;
+    transition: transform 0.3s ease;
+}
+/* MARCO EN EL VIDEO */
+video {
+    border: 4px solid #ff6600;
+    padding: 4px;
+    background-color: #000000;
+}
+/* TOQUES FINALES DE DISEÑO MODERNO */
+#nav {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    border-bottom: 3px solid #ff6600;
+    margin-bottom: 20px;
+}
+
+#nav a {
+    padding: 6px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#nav a:hover {
+    background-color: #003366;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+h2 {
+    border-left: 5px solid #ff6600;
+    padding-left: 12px;
+    margin-top: 25px;
+}
+
+figure img, video {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+}

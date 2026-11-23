@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNFV - Panel de Estadísticas</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffa366; /* Naranja UNFV más claro y suave */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 20px;
+        }
+
+        /* Menú superior para regresar */
+        #nav-regresar {
+            background: #ffffff;
+            padding: 12px 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        #nav-regresar a {
+            color: #003366;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 650px;
+            width: 100%;
+        }
+
+        h1 { color: #003366; font-size: 2.2em; margin-bottom: 5px; }
+        .subtitle { color: #555; font-size: 1.1em; margin-bottom: 25px; }
+
+        /* Cuadro de mensajes controlado por JavaScript */
+        .message-box {
+            background: #003366; /* Azul oscuro académico base */
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            transition: background 0.5s ease;
+        }
+        #text { font-size: 1.6em; font-weight: bold; }
+
+        .buttons { display: flex; gap: 12px; justify-content: center; margin: 25px 0; }
+
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            background: #ff6600;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover { background: #e05500; }
+
+        .stats { display: flex; justify-content: space-around; margin: 30px 0; }
+        .stat-number { font-size: 2em; font-weight: bold; color: #ff6600; }
+        .stat-label { color: #555; font-size: 0.95em; margin-top: 5px; }
+
+        .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 25px 0; }
+        .feature { padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #003366; }
+        .feature strong { color: #003366; display: block; margin-bottom: 5px; }
+
+        .footer { margin-top: 30px; color: #888; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+
+    <!-- MENÚ RETORNO -->
+    <div id="nav-regresar">
+        <strong>UNFV Portal:</strong> <a href="../index.html">← Volver al Inicio</a>
+    </div>
+
+    <div class="container">
+        <h1>FIEI - Panel Informativo</h1>
+        <p class="subtitle">Innovación y Excelencia en Ingeniería Informática</p>
+        
+        <!-- CAJA DINÁMICA -->
+        <div class="message-box">
+            <p id="text">Cargando estadísticas del sistema...</p>
+        </div>
+
+        <!-- BOTONES CON EVENTOS (Capítulo 1 de JS) -->
+        <div class="buttons">
+            <button onclick="cambiarMensaje('¡FIEI, la facultad de los mejores ingenieros!')">Mensaje 1</button>
+            <button onclick="cambiarMensaje('Transformación Digital e Innovación UNFV')">Mensaje 2</button>
+            <button onclick="cambiarMensaje('Desarrollando software para el Perú contemporáneo')">Mensaje 3</button>
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">150+</div>
+                <div class="stat-label">Proyectos</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Miembros</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Años</div>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <strong>Innovación</strong>
+                <p>Laboratorios de cómputo modernos</p>
+            </div>
+            <div class="feature">
+                <strong>Comunidad</strong>
+                <p>Trabajo en equipo Villarrealino</p>
+            </div>
+            <div class="feature">
+                <strong>Excelencia</strong>
+                <p>Calidad educativa garantizada</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 Facultad de Ingeniería Electrónica e Informática - UNFV</p>
+        </div>
+    </div>
+
+    <!-- PROGRAMACIÓN DE VARIABLES Y TEMPORIZADORES (Capítulo 2 de JS) -->
+    <script>
+        // 1. Definimos una variable de texto base (Capítulo 2)
+        var autorFIEI = "Gonzalo";
+        
+        // Mensaje inicial controlado por JS
+        document.getElementById('text').innerHTML = "Panel interactivo creado por: " + autorFIEI;
+        
+        // 2. Función para los botones del menú (Capítulo 1)
+        function cambiarMensaje(nuevoTexto) {
+            document.getElementById('text').innerHTML = nuevoTexto;
+        }
+        
+        // 3. Temporizador interactivo para cambiar los colores del banner (Capítulo 1 y 2)
+        setInterval(function() {
+            var coloresAcacademicos = ['#003366', '#ff6600', '#002244', '#cc5200'];
+            var colorAleatorio = coloresAcacademicos[Math.floor(Math.random() * coloresAcacademicos.length)];
+            document.querySelector('.message-box').style.background = colorAleatorio;
+        }, 4000);
+        
+        // 4. Variable numérica para el contador de visitas automático (Capítulo 2)
+        var contadorVisitas = 120; 
+        setInterval(function() {
+            contadorVisitas++;
+            document.getElementById('text').innerHTML = "Usuarios conectados en el portafolio FIEI: " + contadorVisitas;
+        }, 5000);
+    </script>
+</body>
+</html>

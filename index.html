@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- Basado estrictamente en las reglas del manual (Duckett, 2011) - Capítulos 1 al 11 y JS Capítulos 1 y 2 -->
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Ingeniería Informática en la UNFV" />
+    <title>UNFV - Ingeniería Informática</title>
+    <!-- Vinculación de estilos según el Capítulo 10 -->
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+
+    <!-- MENÚ DE NAVEGACIÓN UNFV UNIFORME -->
+    <div id="nav">
+        <strong>UNFV:</strong> 
+        <a href="index.html">Inicio</a>
+        <a href="paginas-hijas/campo-laboral.html">Mercado Laboral Peruano</a>
+        <a href="paginas-hijas/computadoras.html">Sistemas Informáticos</a>
+        <a href="paginas-hijas/conclusiones.html">Conclusiones de la Carrera</a>
+        <a href="paginas-hijas/estadisticas.html">Panel FIEI Live</a>
+        <a href="paginas-hijas/tecnologias.html">Tecnologías</a>
+        <a href="https://maps.app.goo.gl/q4DFEoLWHey24Qg36" target="_blank">Ubicación FIEI</a>
+        <a href="paginas-hijas/malla.html">Malla Curricular</a>
+
+    </div>
+
+    <!-- CAJA CONTENEDORA DONDE JAVASCRIPT INYECTARÁ EL RELOJ EN TIEMPO REAL -->
+    <div id="banner-saludo"></div>
+
+    <div id="content">
+        <h1>Ingeniería Informática</h1>
+        <h2>Facultad de Ingeniería Electrónica e Informática - UNFV</h2>
+        
+        <p>En la Universidad Nacional Federico Villarreal (UNFV) formamos profesionales altamente capacitados para liderar el desarrollo tecnológico y la transformación digital en el país. El programa académico está diseñado para que los estudiantes dominen tanto la arquitectura lógica del software como la infraestructura física de los sistemas de información corporativos.</p>
+
+        <p>Aprender a escribir el código utilizado para crear sistemas complejos y bases de datos masivas no requiere ser un experto desde el primer día. Con una metodología práctica y estructurada, la Ingeniería Informática dota a los futuros ingenieros de las herramientas conceptuales necesarias para tomar el control absoluto de la tecnología moderna, optimizando procesos y resolviendo problemas reales en beneficio de la sociedad peruana.</p>
+
+        <!-- IMAGEN 1 RECUPERADA (Capítulo 5 - Elemento Figure limpio) -->
+        <figure>
+            <img src="images/unfv_facultad.jpg" alt="Facultad de la UNFV" width="400" height="300" />
+            
+        </figure>
+
+        <p>Nuestros estudiantes e investigadores avanzan con paso firme frente a los nuevos desafíos globales de la computación, participando de forma activa en proyectos orientados a la conectividad, las redes de datos y la seguridad de la información. La formación institucional promueve el pensamiento crítico y la innovación constante en la infraestructura tecnológica del entorno público y privado.</p>
+
+        <!-- IMAGEN 2 RECUPERADA -->
+        <figure>
+            <img src="images/laboratorio_unfv.jpg" alt="Laboratorio de Cómputo UNFV" width="400" height="300" />
+            
+        </figure>
+
+        <p>A continuación, presentamos un recurso audiovisual interactivo que detalla la visión, los objetivos estratégicos y el rol de nuestra facultad en la formación de líderes en ciencia y tecnología para el Perú contemporáneo.</p>
+
+        <!-- ESPACIO PARA 1 VIDEO (Capítulo 9) -->
+        <h3>Video Institucional de la Carrera</h3>
+        <video src="videos/unfv_introduccion.mp4" width="400" height="300" controls="controls">
+            <p>La reproducción de video no es compatible con tu navegador.</p>
+        </video>
+    </div>
+
+    <!-- PIE DE PÁGINA CON CONTACTO DE CORREO Y WHATSAPP (Capítulo 4 y 8) -->
+    <div id="footer">
+        <hr />
+        <h3>Contacto e Informes</h3>
+        <p>¿Deseas más información sobre la carrera de Ingeniería Informática en la UNFV? Comunícate con nosotros:</p>
+        <p>
+            <strong>Correo institucional:</strong> 
+            <a href="mailto:informes.fiei@unfv.edu.pe">informes.fiei@unfv.edu.pe</a>
+            <br />
+            <strong>WhatsApp de atención:</strong> 
+            <a href="https://wa.me" target="_blank">+51 982 705 839 (Escribir por WhatsApp)</a>
+        </p>
+        <p><a href="#nav">&uarr; Volver arriba</a></p>
+    </div>
+
+    <!-- CONEXIÓN EXTERNA DE JAVASCRIPT SEGÚN EL CAPÍTULO 1 (PÁG. 42) -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNFV - Tecnologías de la Carrera</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffa366; /* Mismo naranja suave del panel FIEI */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 20px;
+        }
+
+        /* Menú superior para regresar */
+        #nav-regresar {
+            background: #ffffff;
+            padding: 12px 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        #nav-regresar a {
+            color: #003366;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        #nav-regresar a:hover {
+            text-decoration: underline;
+            color: #ff6600;
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 780px;
+            width: 100%;
+        }
+
+        h1 { color: #003366; font-size: 2.1em; margin-bottom: 5px; }
+        .subtitle { color: #555; font-size: 1.05em; margin-bottom: 25px; }
+
+        /* Caja dinámica donde aparece la información al hacer clic */
+        .info-box {
+            background: #003366;
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0 30px 0;
+            text-align: left;
+            min-height: 135px;
+        }
+        #tech-titulo {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #ffa366;
+            margin-bottom: 8px;
+        }
+        #tech-detalle {
+            font-size: 1.05em;
+            line-height: 1.5em;
+        }
+
+        /* Cuadrícula de 6 botones estilo tarjeta */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .tech-btn {
+            background: #ffffff;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 15px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .tech-btn:hover {
+            border-color: #ff6600;
+            background: #fff8f3;
+            transform: translateY(-2px);
+        }
+
+        .tech-btn span {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #222222;
+        }
+
+        .tech-btn img {
+            width: 38px;
+            height: 38px;
+            object-fit: contain;
+        }
+
+        .footer {
+            margin-top: 25px;
+            color: #888;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MENÚ RETORNO -->
+    <div id="nav-regresar">
+        <strong>UNFV Portal:</strong> 
+        <a href="../index.html">← Volver al Inicio</a>
+        <a href="estadisticas.html">Panel FIEI Live</a>
+    </div>
+
+    <div class="container">
+        <h1>Tecnologías y Lenguajes</h1>
+        <p class="subtitle">Haz clic en cualquier tecnología para ver cómo se aplica en Ingeniería Informática</p>
+        
+        <!-- CAJA DE INFORMACIÓN CONTROLADA POR JS -->
+        <div class="info-box">
+            <div id="tech-titulo">Selecciona una tecnología</div>
+            <p id="tech-detalle">Haz clic en cualquiera de los 6 botones de abajo para conocer su función y aplicación profesional dentro de la carrera en la UNFV.</p>
+        </div>
+
+        <!-- 6 BOTONES CON ICONOS LOCALES PNG -->
+        <div class="tech-grid">
+            <button class="tech-btn" onclick="mostrarInfo('html')">
+                <span>HTML5</span>
+                <img src="../images/html5.png" alt="HTML5" />
+            </button>
+
+            <button class="tech-btn" onclick="mostrarInfo('css')">
+                <span>CSS3</span>
+                <img src="../images/css3.png" alt="CSS3" />
+            </button>
+
+            <button class="tech-btn" onclick="mostrarInfo('js')">
+                <span>JavaScript</span>
+                <img src="../images/js.png" alt="JavaScript" />
+            </button>
+
+            <button class="tech-btn" onclick="mostrarInfo('python')">
+                <span>Python</span>
+                <img src="../images/python.png" alt="Python" />
+            </button>
+
+            <button class="tech-btn" onclick="mostrarInfo('java')">
+                <span>Java</span>
+                <img src="../images/java.png" alt="Java" />
+            </button>
+
+            <button class="tech-btn" onclick="mostrarInfo('sql')">
+                <span>Bases de Datos</span>
+                <img src="../images/sql.png" alt="SQL" />
+            </button>
+        </div>
+
+        
+    </div>
+
+    <!-- JAVASCRIPT (Capítulos 1 y 2: variables, funciones e if/else) -->
+    <script>
+        function mostrarInfo(lenguaje) {
+            var titulo = "";
+            var descripcion = "";
+
+            if (lenguaje === 'html') {
+                titulo = "HTML5 — Estructura Web";
+                descripcion = "Es el lenguaje base para estructurar páginas y aplicaciones web. En la carrera se aplica en el desarrollo frontend y en la creación de portales institucionales y plataformas digitales.";
+            } else if (lenguaje === 'css') {
+                titulo = "CSS3 — Diseño y Presentación Visual";
+                descripcion = "Permite dar estilo, colores, tipografía y orden visual a los sitios web. Se utiliza para construir interfaces profesionales adaptables a computadoras y celulares.";
+            } else if (lenguaje === 'js') {
+                titulo = "JavaScript — Interactividad y Dinamismo";
+                descripcion = "Aporta lógica en tiempo real al navegador, validaciones y respuestas dinámicas sin recargar la página. Es esencial para sistemas web modernos y paneles interactivos.";
+            } else if (lenguaje === 'python') {
+                titulo = "Python — Ciencia de Datos e Inteligencia Artificial";
+                descripcion = "Lenguaje versátil muy usado en la UNFV para automatización, análisis de datos masivos, redes neuronales, ciberseguridad y desarrollo backend.";
+            } else if (lenguaje === 'java') {
+                titulo = "Java — Software Empresarial y Orientado a Objetos";
+                descripcion = "Fundamental en los cursos de programación estructurada y orientada a objetos. Se aplica en sistemas bancarios, aplicaciones corporativas robustas y desarrollo Android.";
+            } else if (lenguaje === 'sql') {
+                titulo = "SQL — Gestión de Bases de Datos";
+                descripcion = "Permite diseñar, consultar y proteger grandes volúmenes de información. Todo ingeniero informático lo aplica para administrar servidores de datos en empresas e instituciones.";
+            }
+
+            document.getElementById('tech-titulo').innerHTML = titulo;
+            document.getElementById('tech-detalle').innerHTML = descripcion;
+        }
+    </script>
+</body>
+</html>
