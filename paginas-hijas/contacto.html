@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!-- Basado estrictamente en los Capítulos 1 al 11 (Capítulo 7: Formularios) y JS Capítulos 1 y 2 -->
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Formulario de contacto e informes de admisión - Ingeniería Informática UNFV" />
+    <title>Contacto y Admisión - UNFV</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css" />
+</head>
+<body>
+
+    <!-- MENÚ DE NAVEGACIÓN UNIFORME -->
+    <div id="nav">
+        <strong>UNFV:</strong> 
+        <a href="../index.html">Inicio</a>
+        <a href="campo-laboral.html">Mercado Laboral Peruano</a>
+        <a href="computadoras.html">Sistemas Informáticos</a>
+        <a href="conclusiones.html">Conclusiones de la Carrera</a>
+        <a href="estadisticas.html">Panel FIEI Live</a>
+        <a href="tecnologias.html">Tecnologías</a>
+        <a href="malla.html">Malla Curricular</a>
+        <a href="contacto.html">Solicitar Informes</a>
+    </div>
+
+    <div id="content">
+        <h1>Solicita Información sobre la Carrera</h1>
+        <h2>Orientación Vocacional y Admisión - FIEI UNFV</h2>
+        
+        <p>Si deseas conocer más detalles sobre el plan de estudios de Ingeniería Informática, las modalidades de ingreso o las próximas fechas del examen de admisión de la Universidad Nacional Federico Villarreal, completa tus datos en el siguiente formulario y un asesor académico se comunicará contigo.</p>
+
+        <!-- FORMULARIO SEGÚN EL CAPÍTULO 7 DE JON DUCKETT -->
+        <form onsubmit="enviarSolicitud(event)">
+            <fieldset style="background-color: #ffffff; border: 2px solid #003366; padding: 25px;">
+                <legend style="color: #ff6600; font-weight: bold; font-size: 120%; padding: 0 10px;">Dejanos tus datos para contactarte</legend>
+
+                <p>
+                    <label for="nombre"><strong>Nombres y Apellidos completos:</strong></label><br />
+                    <input type="text" id="nombre" name="nombre" size="45" placeholder="Ej. Juan Pérez Mendoza" required="required" style="padding: 8px; margin-top: 5px; width: 95%;" />
+                </p>
+
+                <p>
+                    <label for="correo"><strong>Correo electrónico:</strong></label><br />
+                    <input type="email" id="correo" name="correo" size="45" placeholder="Ej. juan.perez@gmail.com" required="required" style="padding: 8px; margin-top: 5px; width: 95%;" />
+                </p>
+
+                <p>
+                    <label for="telefono"><strong>Número de celular / WhatsApp:</strong></label><br />
+                    <input type="text" id="telefono" name="telefono" size="20" maxlength="15" placeholder="Ej. 987 654 321" required="required" style="padding: 8px; margin-top: 5px; width: 95%;" />
+                </p>
+
+                                <p>
+                    <label for="modalidad"><strong>Tema sobre el que deseas información:</strong></label><br />
+                    <select id="modalidad" name="modalidad" style="padding: 8px; margin-top: 5px; width: 98%;">
+                        <option value="Examen de Admisión Ordinario">Examen de Admisión Ordinario</option>
+                        <option value="Centro Preuniversitario (CEPREVI)">Centro Preuniversitario (CEPREVI)</option>
+                        <option value="Información sobre la carrera">Información sobre la carrera</option>
+                        <option value="Información sobre el examen de admisión">Información sobre los horarios de la carrera</option>
+                    </select>
+                </p>
+
+
+                <p>
+                    <strong>¿Cómo prefieres que te contactemos?</strong><br />
+                    <input type="radio" id="via-wsp" name="medio" value="WhatsApp" checked="checked" />
+                    <label for="via-wsp">Por WhatsApp</label>
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="radio" id="via-llamada" name="medio" value="Llamada telefónica" />
+                    <label for="via-llamada">Por Llamada telefónica</label>
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="radio" id="via-correo" name="medio" value="Correo electrónico" />
+                    <label for="via-correo">Por Correo electrónico</label>
+                </p>
+
+                <p>
+                    <label for="consulta"><strong>Escribe tu consulta o duda específica:</strong></label><br />
+                    <textarea id="consulta" name="consulta" rows="4" cols="45" placeholder="Cuéntanos qué información necesitas sobre la carrera o el proceso de admisión..." style="padding: 8px; margin-top: 5px; width: 95%;"></textarea>
+                </p>
+
+                <p style="text-align: center; margin-top: 20px;">
+                    <input type="submit" value="Enviar Solicitud de Información" style="background-color: #ff6600; color: #ffffff; font-weight: bold; padding: 12px 25px; border: none; cursor: pointer; font-size: 105%;" />
+                </p>
+            </fieldset>
+        </form>
+
+        <!-- CAJA DONDE APARECE LA CONFIRMACIÓN AL ENVIAR (JS Capítulo 1 y 2) -->
+        <div id="mensaje-confirmacion" style="display: none; background-color: #003366; color: #ffffff; padding: 20px; margin-top: 20px; border-left: 5px solid #ff6600;"></div>
+    </div>
+
+    <script>
+        function enviarSolicitud(evento) {
+            evento.preventDefault(); // Evita que la página se recargue y pierda los datos
+
+            var nombreUsuario = document.getElementById('nombre').value;
+            var modalidadElegida = document.getElementById('modalidad').value;
+            var telefonoUsuario = document.getElementById('telefono').value;
+
+            var caja = document.getElementById('mensaje-confirmacion');
+            caja.style.display = "block";
+            caja.innerHTML = "<strong>¡Solicitud registrada con éxito, " + nombreUsuario + "!</strong><br />" +
+                             "Hemos recibido tu interés en la modalidad <em>" + modalidadElegida + "</em>. " +
+                             "Un asesor de la FIEI - UNFV se comunicará pronto al número <strong>" + telefonoUsuario + "</strong>.";
+        }
+    </script>
+
+</body>
+</html>
